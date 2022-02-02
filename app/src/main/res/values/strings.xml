@@ -5,8 +5,8 @@
     <string name="player_one_text">PLAYER 1</string>
     <string name="player_two_text">PLAYER 2</string>
 
-    // Timer hint
-    <string name="timer_hint_text">40:00</string>
+    // Timer Text
+    <string name="timer_text">40:00</string>
 
     // LP Text
     <string name="player_one_lp_text">8000</string>
