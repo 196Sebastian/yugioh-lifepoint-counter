@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="player_text_sizes">20sp</dimen>
+    <dimen name="player_text_margin">20dp</dimen>
+
+    <dimen name="timer_hint_text_size">30sp</dimen>
+    <dimen name="timer_hint_text_marginTop">10dp</dimen>
+
+    <dimen name="player_marginEnd">230dp</dimen>
+
+    <dimen name="linear_layout_marginTop">20dp</dimen>
+
+    <dimen name="life_points_text_size">25sp</dimen>
+
+
+</resources>
