@@ -3,15 +3,18 @@
 
     <dimen name="player_text_sizes">20sp</dimen>
     <dimen name="player_text_margin">20dp</dimen>
-
     <dimen name="timer_hint_text_size">30sp</dimen>
     <dimen name="timer_hint_text_marginTop">10dp</dimen>
-
     <dimen name="player_marginEnd">230dp</dimen>
-
     <dimen name="linear_layout_marginTop">20dp</dimen>
-
     <dimen name="life_points_text_size">25sp</dimen>
-
+    <dimen name="row_one_marginTop">75dp</dimen>
+    <dimen name="btn_reset_marginTop">5dp</dimen>
+    <dimen name="tv_marginTop">8dp</dimen>
+    <dimen name="tv_input_text_size">45sp</dimen>
+    <dimen name="btn_left_marginStart">20dp</dimen>
+    <dimen name="btn_left_marginTop">28dp</dimen>
+    <dimen name="btn_right_marginTop">28dp</dimen>
+    <dimen name="btn_right_marginEnd">20dp</dimen>
 
 </resources>

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.example.yugiohlifepointscounter.R
 import java.util.*
 
@@ -19,8 +21,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.timer_textview).setOnClickListener {
+            Toast.makeText(this@MainActivity, "IT'S TIME TO DUEL!", Toast.LENGTH_SHORT).show()
             startTimeCounter()
         }
+    }
+
+    fun onDigit(view: View) {
+        findViewById<TextView>(R.id.tvInput).append((view as Button).text)
     }
 
     private fun startTimeCounter() {

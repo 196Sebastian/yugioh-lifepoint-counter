@@ -11,4 +11,28 @@
     // LP Text
     <string name="player_one_lp_text">8000</string>
     <string name="player_two_lp_text">8000</string>
+
+    // tvInput
+    <string name="tv_hint_input_text">0</string>
+
+    // Button Text
+    <string name="reset">Reset</string>
+    <string name="btn_left_text">-</string>
+    <string name="btn_left_addition_text">+</string>
+    <string name="btn_right_subtract_text">-</string>
+    <string name="btn_right_addition_text">+</string>
+    <string name="btn_clear_text">CLR</string>
+    <string name="btn_one_text">1</string>
+    <string name="btn_two_text">2</string>
+    <string name="btn_three_text">3</string>
+    <string name="btn_four_text">4</string>
+    <string name="btn_five_text">5</string>
+    <string name="btn_six_text">6</string>
+    <string name="btn_seven_text">7</string>
+    <string name="btn_eight_text">8</string>
+    <string name="btn_nine_text">9</string>
+    <string name="btn_zero_text">0</string>
+    <string name="btn_double_zero_text">00</string>
+    <string name="btn_triple_zero_text">000</string>
+
 </resources>

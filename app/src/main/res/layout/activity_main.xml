@@ -41,11 +41,86 @@
         app:layout_constraintEnd_toStartOf="@+id/player_two_textview"
         app:layout_constraintStart_toEndOf="@+id/player_one_textview" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/btn_reset_marginTop"
+        android:text="@string/reset"
+        app:layout_constraintEnd_toEndOf="@+id/life_points_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/life_points_linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/timer_textview" />
+
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_marginTop"
+        android:maxLength="4"
+        android:hint="@string/tv_hint_input_text"
+        android:textSize="@dimen/tv_input_text_size"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/life_points_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/life_points_linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/life_points_linearLayout" />
+
+    <Button
+        android:id="@+id/btn_left_subtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_left_text"
+        android:layout_marginStart="@dimen/btn_left_marginStart"
+        android:layout_marginTop="@dimen/btn_left_marginTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/life_points_linearLayout" />
+
+    <Button
+        android:id="@+id/btn_left_addition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/btn_left_addition_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_left_subtract" />
+
+    <Button
+        android:id="@+id/btn_right_subtract"
+        android:layout_marginTop="@dimen/btn_right_marginTop"
+        android:layout_marginEnd="@dimen/btn_right_marginEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_right_subtract_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/life_points_linearLayout" />
+
+    <Button
+        android:id="@+id/btn_right_addition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/btn_right_marginTop"
+        android:layout_marginEnd="@dimen/btn_right_marginEnd"
+        android:text="@string/btn_right_addition_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_right_subtract" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/btn_clear_text"
+        app:layout_constraintEnd_toStartOf="@+id/btn_right_subtract"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toEndOf="@+id/btn_left_subtract"
+        app:layout_constraintTop_toBottomOf="@+id/tvInput" />
+
+    <LinearLayout
+        android:id="@+id/life_points_linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/linear_layout_marginTop"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timer_textview">
@@ -64,6 +139,173 @@
             android:layout_height="wrap_content"
             android:text="@string/player_two_lp_text"
             android:textSize="@dimen/life_points_text_size" />
+
+    </LinearLayout>
+
+    <!-- Row 1 -->
+    <LinearLayout
+        android:id="@+id/row_one_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/row_one_marginTop"
+        app:layout_constraintTop_toBottomOf="@+id/btn_clear"
+        >
+
+        <Button
+            android:id="@+id/btnOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="@string/btn_one_text"
+            android:onClick="onDigit" />
+
+        <Button
+            android:id="@+id/btnTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_two_text" />
+
+        <Button
+            android:id="@+id/btnThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_three_text" />
+
+    </LinearLayout>
+
+    <!-- Row 2 -->
+    <LinearLayout
+        android:id="@+id/row_two_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/row_one_linearLayout">
+
+        <Button
+            android:id="@+id/btnFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_four_text" />
+
+        <Button
+            android:id="@+id/btnFive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_five_text" />
+
+        <Button
+            android:id="@+id/btnSix"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_six_text" />
+
+    </LinearLayout>
+
+    <!-- Row 3-->
+    <LinearLayout
+        android:id="@+id/row_three_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/row_two_linearLayout" >
+
+        <Button
+            android:id="@+id/btnSeven"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_seven_text" />
+
+        <Button
+            android:id="@+id/btnEight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_eight_text" />
+
+        <Button
+            android:id="@+id/btnNine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_nine_text" />
+
+    </LinearLayout>
+
+    <!-- Row 4-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/row_three_linearLayout" >
+
+        <Button
+            android:id="@+id/btnZero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_zero_text" />
+
+        <Button
+            android:id="@+id/btnDoubleZero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onDigit"
+            android:text="@string/btn_double_zero_text" />
+
+        <Button
+            android:id="@+id/btnTripleZero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="onClear"
+            android:text="@string/btn_triple_zero_text" />
 
     </LinearLayout>
 
