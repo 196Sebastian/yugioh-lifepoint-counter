@@ -56,10 +56,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/tv_marginTop"
-        android:maxLength="4"
         android:hint="@string/tv_hint_input_text"
-        android:textSize="@dimen/tv_input_text_size"
+        android:maxLength="4"
         android:textColor="@color/black"
+        android:textSize="@dimen/tv_input_text_size"
         app:layout_constraintEnd_toEndOf="@+id/life_points_linearLayout"
         app:layout_constraintStart_toStartOf="@+id/life_points_linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/life_points_linearLayout" />
@@ -110,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="@string/btn_clear_text"
+        android:onClick="clearAction"
         app:layout_constraintEnd_toStartOf="@+id/btn_right_subtract"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toEndOf="@+id/btn_left_subtract"
@@ -304,7 +305,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:onClick="onClear"
+            android:onClick="onDigit"
             android:text="@string/btn_triple_zero_text" />
 
     </LinearLayout>

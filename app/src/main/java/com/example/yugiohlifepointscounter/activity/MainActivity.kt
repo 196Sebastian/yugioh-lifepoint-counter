@@ -24,10 +24,48 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "IT'S TIME TO DUEL!", Toast.LENGTH_SHORT).show()
             startTimeCounter()
         }
+
+        findViewById<Button>(R.id.btn_left_addition).setOnClickListener { additionLeftButton() }
+        findViewById<Button>(R.id.btn_right_addition).setOnClickListener { additionRightButton() }
+
     }
 
     fun onDigit(view: View) {
         findViewById<TextView>(R.id.tvInput).append((view as Button).text)
+    }
+
+    fun clearAction(view: View) {
+        findViewById<TextView>(R.id.tvInput).text = ""
+    }
+
+    private fun additionLeftButton() {
+        val playerOneLP = findViewById<TextView>(R.id.tvInput).text.toString()
+
+        if(playerOneLP == ""){
+            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() + 0)
+        } else{
+            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() + playerOneLP.toInt())
+        }
+    }
+
+    private fun displayLeft(number: Int) {
+        val displayInteger = findViewById<TextView>(R.id.player_one_lp_textview)
+        displayInteger.text = "" + number
+    }
+
+    private fun additionRightButton() {
+        val playerOneLP = findViewById<TextView>(R.id.tvInput).text.toString()
+
+        if(playerOneLP == ""){
+            displayRight(findViewById<TextView>(R.id.player_two_lp_textview).text.toString().toInt() + 0)
+        } else{
+            displayRight(findViewById<TextView>(R.id.player_two_lp_textview).text.toString().toInt() + playerOneLP.toInt())
+        }
+    }
+
+    private fun displayRight(number: Int) {
+        val displayInteger = findViewById<TextView>(R.id.player_two_lp_textview)
+        displayInteger.text = "" + number
     }
 
     private fun startTimeCounter() {
