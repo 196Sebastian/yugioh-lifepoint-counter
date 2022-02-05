@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.yugiohlifepointscounter.R
+import org.w3c.dom.Text
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -50,10 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         val resetTV = findViewById<TextView>(R.id.tvInput)
         resetTV.text = ""
-
-        timeLeftInMillis = START_TIME_IN_MILLIS
-        updateCountDownText()
-     }
+    }
 
     private fun displayLeft(number: Int) {
         val displayInteger = findViewById<TextView>(R.id.player_one_lp_textview)
