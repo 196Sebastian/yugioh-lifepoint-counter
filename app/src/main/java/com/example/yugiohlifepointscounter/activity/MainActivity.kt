@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.yugiohlifepointscounter.R
+import com.example.yugiohlifepointscounter.activity.dice.DiceRoll
 import org.w3c.dom.Text
 import java.util.*
 
@@ -31,11 +32,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_left_subtract).setOnClickListener { subtractionLeftButton() }
         findViewById<Button>(R.id.btn_right_subtract).setOnClickListener { subtractionRightButton() }
 
-        findViewById<Button>(R.id.btn_reset).setOnClickListener {
-            onReset()
-        }
+        findViewById<Button>(R.id.btn_roll_dice).setOnClickListener { rollDice() }
+        findViewById<Button>(R.id.btn_reset).setOnClickListener { onReset() }
 
-        updateCountDownText()
     }
 
     fun onDigit(view: View) {
@@ -52,6 +51,13 @@ class MainActivity : AppCompatActivity() {
 
         val resetTV = findViewById<TextView>(R.id.tvInput)
         resetTV.text = ""
+    }
+
+    private fun rollDice(){
+        val dice = DiceRoll(6)
+        val diceRoll = dice.roll()
+        val resultDice = diceRoll.toString()
+        Toast.makeText(this@MainActivity, "YOU ROLLED THE NUMBER $resultDice!", Toast.LENGTH_LONG).show()
     }
 
     private fun displayLeft(number: Int) {
