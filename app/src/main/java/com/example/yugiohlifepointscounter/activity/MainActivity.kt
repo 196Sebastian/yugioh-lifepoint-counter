@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     private var START_TIME_IN_MILLIS: Long = 2400000
     private var timeLeftInMillis = START_TIME_IN_MILLIS
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,7 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_left_addition).setOnClickListener { additionLeftButton() }
         findViewById<Button>(R.id.btn_right_addition).setOnClickListener { additionRightButton() }
+        findViewById<Button>(R.id.btn_left_subtract).setOnClickListener { subtractionLeftButton() }
+        findViewById<Button>(R.id.btn_right_subtract).setOnClickListener { subtractionRightButton() }
 
+        findViewById<Button>(R.id.btn_reset).setOnClickListener {
+            onReset()
+        }
+
+        updateCountDownText()
     }
 
     fun onDigit(view: View) {
@@ -38,18 +44,24 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvInput).text = ""
     }
 
-    private fun additionLeftButton() {
-        val playerOneLP = findViewById<TextView>(R.id.tvInput).text.toString()
+    private fun onReset(){
+        displayRight(8000)
+        displayLeft(8000)
 
-        if(playerOneLP == ""){
-            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() + 0)
-        } else{
-            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() + playerOneLP.toInt())
-        }
-    }
+        val resetTV = findViewById<TextView>(R.id.tvInput)
+        resetTV.text = ""
+
+        timeLeftInMillis = START_TIME_IN_MILLIS
+        updateCountDownText()
+     }
 
     private fun displayLeft(number: Int) {
         val displayInteger = findViewById<TextView>(R.id.player_one_lp_textview)
+        displayInteger.text = "" + number
+    }
+
+    private fun displayRight(number: Int) {
+        val displayInteger = findViewById<TextView>(R.id.player_two_lp_textview)
         displayInteger.text = "" + number
     }
 
@@ -63,9 +75,34 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun displayRight(number: Int) {
-        val displayInteger = findViewById<TextView>(R.id.player_two_lp_textview)
-        displayInteger.text = "" + number
+    private fun subtractionRightButton() {
+        val playerOneLP = findViewById<TextView>(R.id.tvInput).text.toString()
+
+        if(playerOneLP == ""){
+            displayRight(findViewById<TextView>(R.id.player_two_lp_textview).text.toString().toInt() - 0)
+        } else{
+            displayRight(findViewById<TextView>(R.id.player_two_lp_textview).text.toString().toInt() - playerOneLP.toInt())
+        }
+    }
+
+    private fun additionLeftButton() {
+        val playerOneLP = findViewById<TextView>(R.id.tvInput).text.toString()
+
+        if(playerOneLP == ""){
+            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() + 0)
+        } else{
+            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() + playerOneLP.toInt())
+        }
+    }
+
+    private fun subtractionLeftButton() {
+        val playerOneLP = findViewById<TextView>(R.id.tvInput).text.toString()
+
+        if(playerOneLP == ""){
+            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() - 0)
+        } else{
+            displayLeft(findViewById<TextView>(R.id.player_one_lp_textview).text.toString().toInt() - playerOneLP.toInt())
+        }
     }
 
     private fun startTimeCounter() {
